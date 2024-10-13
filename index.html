@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/dae3077446.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CombinedCarbon</title>
+</head>
+<body style="background-image: linear-gradient(white, #D7F1D1);">
+    <div class="container mt-3" >
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid" >
+          <a class="navbar-brand" href="#">CombinedCarbon</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Get Started</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="resources.html">Citations</a>
+              </li>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+      
+    <div id="wrapper">
+        <div class="container" style="padding: 10%">
+            <h1 class="display-1" style="text-align: center">CombinedCarbon</h1>
+            <div class="d-grid gap-1">
+            <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Handdrawn with care from Mohit Kharel"><img src="launch.png" class="img-fluid" data-bs-toggle="modal" data-bs-target="#transModal"></a>
+            </div>
+        </div>
+
+
+              <!-- Transportation Modal -->
+              <div class="modal fade modal-lg" id="transModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Step 1 - Enter your transportation information</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                        <fieldset class="mb-4" id="transDisplay" onchange="saveTransportationMode()">
+                            <legend class="mt-4">What is your primary mode of transportation?</legend>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios1" value="1">
+                              <label class="form-check-label" for="optionsRadios1">
+                                Personal vehicle
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios2" value="2">
+                              <label class="form-check-label" for="optionsRadios2">
+                                Public transportation
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios3" value="2">
+                              <label class="form-check-label" for="optionsRadios3">
+                                Bicycle
+                              </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="optionsRadios" id="optionsRadios4" value="2  ">
+                                <label class="form-check-label" for="optionsRadios4">
+                                  Walking
+                                </label>
+                              </div>
+                          </fieldset>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" href="#" id="reloadButton">Start over</button>
+                        <button type="button" class="btn btn-primary" onclick="checkSavedValue()">Next step</button>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <!-- Car Modal -->
+              <div class="modal fade modal-lg" id="carModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Step 1.4 - Enter your information about your vehicle</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                        <fieldset class="mb-4" id="transDisplay" onchange="saveCarType()">
+                            <legend class="mt-4">What kind of car is it?</legend>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="optionsRadios" id="car1" value="1">
+                              <label class="form-check-label" for="car1">
+                                Gasoline
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="optionsRadios" id="car2" value="2">
+                              <label class="form-check-label" for="car2">
+                                Diesel
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="optionsRadios" id="car3" value="3">
+                              <label class="form-check-label" for="car3">
+                                Hybrid
+                              </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="optionsRadios" id="car4" value="4">
+                                <label class="form-check-label" for="car4">
+                                  Electric
+                                </label>
+                              </div>
+                          </fieldset>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" href="#" id="reloadButton">Start over</button>                        <button type="button" class="btn btn-primary" onclick="saveCarType()" data-bs-toggle='modal' data-bs-target="#mileageModal">Next step</button>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+            
+              <!-- Mileage Modal -->
+              <div class="modal fade modal-lg" id="mileageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Step 1.6 - Enter information about your mileage</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <h3>How many miles per week do you drive?</h3>
+                            <input class="form-control form-control-lg" type="text" placeholder="Average is 221 miles per week" id="miles">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" href="#" id="reloadButton">Start over</button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle='modal' data-bs-target="#waterModal" onclick="saveMiles()">Next step</button>
+                      </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Water Modal -->
+              <div class="modal fade" id="waterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Step 2 - Enter your water usage information</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div class="container-fluid">
+                            <div class="row">
+                            <h3>How many showers do you take per week?</h3>
+                            <input class="form-control form-control-lg" type="number" placeholder="Between 1 and 14" id="showers">
+                            </div>
+                            <br>
+                            <hr>
+                            <div class="row mt-3">
+                                <h3>How do you wash your dishes?</h3>
+                                <fieldset class="" id="dishesField" onchange="">
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="washRadios" id="washes" value="44">
+                                      <label class="form-check-label" for="wash1">
+                                        Hand wash
+                                      </label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="radio" name="washRadios" id="washes" value="119">
+                                      <label class="form-check-label" for="wash2">
+                                        Dishwasher
+                                      </label>
+                                    </div>
+                                  </fieldset>
+                                </div>
+                            <hr>
+                            <div class="row">
+                                <h3>How many laundry loads do you do per week?</h3>
+                                <input class="form-control form-control-lg" type="number" placeholder="Between 1 and 10" id="laundry">
+                                </div>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" href="#" id="reloadButton">Start over</button>
+                      <button type="button" class="btn btn-primary" onclick="saveWater()" data-bs-toggle="modal" data-bs-target="#recycleModal">Next step</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Recycle Modal -->
+            <div class="modal fade" id="recycleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Step 3 - Enter your recycling information</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <h3>How often would you say you recycle?</h3>
+                        <select class="form-select" id="recycleDropdown">
+                            <option disabled selected value> -- select an option -- </option>
+                            <option value="0">Never</option>
+                            <option value="1">Sometimes</option>
+                            <option value="2">Always</option>
+                          </select>
+                        <!--  <div id="recycleDisplay"></div> -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" href="#" id="reloadButton">Start over</button>
+                      <button type="button" class="btn btn-primary" onclick="saveRecycleValue()" data-bs-toggle="modal" data-bs-target="#electricModal">Next step</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Electricity Modal -->
+            <div class="modal fade" id="electricModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Step 4 - Enter your electricity use information</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <h3>How many kwH's did you use last month?</h3>
+                        <fieldset class="mb-4" id="energyCheck">
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="energyRadio" id="energy1" value="1">
+                              <label class="form-check-label" for="energy1">
+                                I don't know. Use the average.
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="radio" name="energyRadio" id="energy2" value="2">
+                              <label class="form-check-label" for="energy2">
+                                Got my bill right here. Let me manually enter.
+                              </label>
+                          </fieldset>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" href="#" id="reloadButton">Start over</button>
+                      <button type="button" class="btn btn-primary" onclick="checkEnergy()">Next step</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+                          <!-- 2nd Electricity Modal -->
+            <div class="modal fade" id="energyManualModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Step 4 - Enter your electricity use information</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <h3>Cool! How many kwH's does your bill say?</h3>
+                            <input class="form-control form-control-lg" type="number" placeholder="Enter your answer in kwH per month" id="kwh">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" href="#" id="reloadButton">Start over</button>
+                      <button type="button" class="btn btn-primary" onclick="saveKwh()" data-bs-toggle="modal" data-bs-target="#meatModal">Next step</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- Meat Modal -->
+            <div class="modal fade" id="meatModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Step 5 - Enter your meat consumption information</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                        <h3>How often would you say you eat meat?</h3>
+                        <select class="form-select" id="meatDropdown" onchange="saveMeatValue()">
+                            <option disabled selected value> -- select an option -- </option>
+                            <option value="2">Never</option>
+                            <option value="1">Few times a week</option>
+                            <option value="0">Almost every day</option>
+                          </select>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" href="#" id="reloadButton">Start over</button>
+                      <button type="button" class="btn btn-primary" onclick="finalCalc()" data-bs-toggle="modal" data-bs-target="#reportModal">Get your report</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            <!-- Report modal -->
+            <div class="modal fade modal-lg" id="reportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Here's your report!<
+                        /h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                    <h1><div id="reportCC"></div></h1><h2>/10</h2>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" href="#" id="reloadButton">Start over</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+            </div>
+<script src="script.js"></script>
+</body>
+</html>
