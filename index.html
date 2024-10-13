@@ -4,7 +4,6 @@
 
     <link rel="stylesheet" href="bootstrap.min.css">
     <script src="https://kit.fontawesome.com/dae3077446.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CombinedCarbon</title>
 </head>
@@ -12,7 +11,7 @@
     <div class="container mt-3" >
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid" >
-          <a class="navbar-brand" href="#">CombinedCarbon</a>
+          <a class="navbar-brand" href="#"><i class="fa-solid fa-tree"></i> CombinedCarbon</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -33,10 +32,20 @@
     <div id="wrapper">
         <div class="container" style="padding: 10%">
             <h1 class="display-1" style="text-align: center">CombinedCarbon</h1>
+            <p style="text-align: center">Take a extremely brief test to find out what your impact on the environment is.</p>
             <div class="d-grid gap-1">
             <a href="#" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="Handdrawn with care from Mohit Kharel"><img src="launch.png" class="img-fluid" data-bs-toggle="modal" data-bs-target="#transModal"></a>
             </div>
+            <div class="bs-component">
+              <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                <strong>Disclaimer:</strong> These citations are as reliable as we could find in under 2 days of work, and our equations are based loosly on statistical analysis of median and average American statistics.
+              </div></div>
+            <br>
         </div>
+
+
+
 
 
               <!-- Transportation Modal -->
@@ -322,23 +331,47 @@
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="exampleModalLabel">Here's your report!<
-                        /h1>
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Here's your report!</h1>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
 
-                    <div class="modal-body">
-                    <h1><div id="reportCC"></div></h1><h2>/10</h2>
-
+                    <div class="modal-body" style="padding: 5%">
+                   
+                      <div class="row">
+                        <div class="col-md-4">
+                            <h1 class="circle display-1"><div id="reportCC" class="rounded-circle"></div></h1>
+                        </div>
+                        <div class="col-md-4 ms-auto">
+                          <h1>You scored <div id="reportAmerican"></div> the average American!</h1>
+                          </div>
+                        <div class="col-md-4 ms-auto">
+                        <p class="h4">No one's perfect, but your efforts are appreciated by your fellow humans, animals, and ecosystems across the world. We're in this together!</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <p>When it came to carbon emissions, there are many things that may affect this. Modes of transporation and even what kind of food you eat has an effect! Certain meat processing operations create large amounts of CO2 emission.</p>
+                      </div>  
+                      <div class="col-md-4 ms-auto">
+                        <p>When it came to water usage in your daily life, you scored above average compared to the average American. This means in the past week you used approximately <b><p id="waterList" class="rounded-circle"></p> gallons of water.</b>.</p>
+                      </div>  
+                      <div class="col-md-4 ms-auto">
+                        <p>When it came to recycling, we couldn't realistically measure your effect. However, the fact that you <b>do</b> recycle has an impact, despite what you may think.</p>
+                      </div>  
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" href="#" id="reloadButton">Start over</button>
+                      <div class="d-grid gap-2">
+                        <button class="btn btn-lg btn-primary btn-success" type="button" href="resources.html">View Citations</button>
+                      </div>
                     </div>
                   </div>
                 </div>
             </div>
 
             </div>
+          <script src="https://kit.fontawesome.com/dae3077446.js" crossorigin="anonymous"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 <script src="script.js"></script>
 </body>
 </html>

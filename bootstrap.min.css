@@ -17,3 +17,14 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+.circle {
+    width: 225px;
+    height: 225px;
+    line-height: 225px;
+    border-radius: 50%;
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+    background: #000
+  }

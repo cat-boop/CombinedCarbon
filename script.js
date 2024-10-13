@@ -113,7 +113,6 @@ function saveWater() {
     dishesField = document.getElementById('washes').value;
     totalWater += Number(dishesField);
 }
-console.log(totalWater);
 
 //ALL CALCULATIONS
 function finalCalc() {
@@ -184,8 +183,7 @@ function finalCalc() {
     if (totalWater <= 225) {
         finalCC += 2;
     }
-    console.log(totalWater);
-    
+   
 
     if (kwhValue >= 1199) {
         finalCC += 0;
@@ -196,10 +194,19 @@ function finalCalc() {
     else if (kwhValue <= 599) {
         finalCC += 2;
     }
+    document.getElementById('waterList').innerText = `${totalWater}`;
+    document.getElementById('reportCC').innerText = `${finalCC}/10`;
 
-    document.getElementById('reportCC').innerText = `Your CC: ${finalCC}`;
-}
+    if (Number(finalCC) < 5) {
+        document.getElementById('reportAmerican').innerText = 'worse than';
+    }
+    else if (Number(finalCC) == 5) {
+        document.getElementById('reportAmerican').innerText = 'the same as';
+    }
+    else if (Number(finalCC) > 5) {
+        document.getElementById('reportAmerican').innerText = 'better than';
+    }
 
-function getPercent() {
-    return 50;
+
 }
+console.log('worked')
